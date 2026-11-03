@@ -1,0 +1,7 @@
+# Same build/lint pins as nvaccess/AddonTemplate a838ae6f.
+scons==4.10.1
+Markdown==3.10
+ruff==0.14.5
+# Development-only PE inspection, never bundled for NVDA.
+pefile==2024.8.26
+capstone==5.0.9

@@ -1,0 +1,229 @@
+{
+  "characters": {
+    "RYU": {
+      "name": "Ryu",
+      "key": "ID_CHA_0000",
+      "index": 0
+    },
+    "KEN": {
+      "name": "Ken",
+      "key": "ID_CHA_0001",
+      "index": 1
+    },
+    "CNL": {
+      "name": "Chun-Li",
+      "key": "ID_CHA_0002",
+      "index": 2
+    },
+    "HND": {
+      "name": "E. Honda",
+      "key": "ID_CHA_0003",
+      "index": 3
+    },
+    "BLK": {
+      "name": "Blanka",
+      "key": "ID_CHA_0004",
+      "index": 4
+    },
+    "ZGF": {
+      "name": "Zangief",
+      "key": "ID_CHA_0005",
+      "index": 5
+    },
+    "GUL": {
+      "name": "Guile",
+      "key": "ID_CHA_0006",
+      "index": 6
+    },
+    "DSM": {
+      "name": "Dhalsim",
+      "key": "ID_CHA_0007",
+      "index": 7
+    },
+    "BSN": {
+      "name": "Balrog",
+      "key": "ID_CHA_0008",
+      "index": 8
+    },
+    "BLR": {
+      "name": "Vega",
+      "key": "ID_CHA_0009",
+      "index": 9
+    },
+    "SGT": {
+      "name": "Sagat",
+      "key": "ID_CHA_0010",
+      "index": 10
+    },
+    "VEG": {
+      "name": "M. Bison",
+      "key": "ID_CHA_0011",
+      "index": 11
+    },
+    "AGL": {
+      "name": "C. Viper",
+      "key": "ID_CHA_0012",
+      "index": 12
+    },
+    "CHB": {
+      "name": "Rufus",
+      "key": "ID_CHA_0013",
+      "index": 13
+    },
+    "RIC": {
+      "name": "El Fuerte",
+      "key": "ID_CHA_0014",
+      "index": 14
+    },
+    "JHA": {
+      "name": "Abel",
+      "key": "ID_CHA_0015",
+      "index": 15
+    },
+    "BOS": {
+      "name": "Seth",
+      "key": "ID_CHA_0016",
+      "index": 16
+    },
+    "GKI": {
+      "name": "Akuma",
+      "key": "ID_CHA_0017",
+      "index": 17
+    },
+    "GKN": {
+      "name": "Gouken",
+      "key": "ID_CHA_0018",
+      "index": 18
+    },
+    "HWK": {
+      "name": "T. Hawk",
+      "key": "ID_CHA_0025",
+      "index": 19
+    },
+    "CMY": {
+      "name": "Cammy",
+      "key": "ID_CHA_0019",
+      "index": 20
+    },
+    "FLN": {
+      "name": "Fei Long",
+      "key": "ID_CHA_0020",
+      "index": 21
+    },
+    "DJY": {
+      "name": "Dee Jay",
+      "key": "ID_CHA_0026",
+      "index": 22
+    },
+    "SKR": {
+      "name": "Sakura",
+      "key": "ID_CHA_0021",
+      "index": 23
+    },
+    "ROS": {
+      "name": "Rose",
+      "key": "ID_CHA_0022",
+      "index": 24
+    },
+    "GEN": {
+      "name": "Gen",
+      "key": "ID_CHA_0023",
+      "index": 25
+    },
+    "DAN": {
+      "name": "Dan",
+      "key": "ID_CHA_0024",
+      "index": 26
+    },
+    "GUY": {
+      "name": "Guy",
+      "key": "ID_CHA_0027",
+      "index": 27
+    },
+    "CDY": {
+      "name": "Cody",
+      "key": "ID_CHA_0028",
+      "index": 28
+    },
+    "IBK": {
+      "name": "Ibuki",
+      "key": "ID_CHA_0029",
+      "index": 29
+    },
+    "MKT": {
+      "name": "Makoto",
+      "key": "ID_CHA_0030",
+      "index": 30
+    },
+    "DDL": {
+      "name": "Dudley",
+      "key": "ID_CHA_0031",
+      "index": 31
+    },
+    "ADN": {
+      "name": "Adon",
+      "key": "ID_CHA_0032",
+      "index": 32
+    },
+    "HKN": {
+      "name": "Hakan",
+      "key": "ID_CHA_0033",
+      "index": 33
+    },
+    "JRI": {
+      "name": "Juri",
+      "key": "ID_CHA_0034",
+      "index": 34
+    },
+    "YUN": {
+      "name": "Yun",
+      "key": "ID_TU3_CHA_0100",
+      "index": 35
+    },
+    "YAN": {
+      "name": "Yang",
+      "key": "ID_TU3_CHA_0101",
+      "index": 36
+    },
+    "RYX": {
+      "name": "Evil Ryu",
+      "key": "ID_TU3_CHA_0103",
+      "index": 37
+    },
+    "GKX": {
+      "name": "Oni",
+      "key": "ID_TU3_CHA_0104",
+      "index": 38
+    },
+    "RLN": {
+      "name": "Rolento",
+      "key": "ID_CHA_RLN",
+      "index": 39
+    },
+    "ELN": {
+      "name": "Elena",
+      "key": "ID_CHA_ELN",
+      "index": 40
+    },
+    "PSN": {
+      "name": "Poison",
+      "key": "ID_CHA_PSN",
+      "index": 41
+    },
+    "HUG": {
+      "name": "Hugo",
+      "key": "ID_CHA_HUG",
+      "index": 42
+    },
+    "DCP": {
+      "name": "Decapre",
+      "key": "ID_CHA_DCP",
+      "index": 43
+    },
+    "RND": {
+      "name": "Aleatório",
+      "key": null,
+      "index": -2
+    }
+  }
+}
