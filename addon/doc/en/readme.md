@@ -1,98 +1,86 @@
 # USF4 Reader
 
-USF4 Reader is an NVDA add-on that automatically reads supported menus, choices and notices in
-Ultra Street Fighter IV for Windows. Navigate with your usual game controls and hear the selection
-as it changes. No add-on query shortcuts or OCR are required.
+USF4 Reader is a free, open-source NVDA add-on for Ultra Street Fighter IV on Windows.
+It reads supported menus, choices and notices as you navigate with the game's usual controls,
+so you can follow your selections without a separate query command or OCR.
 
-**Author:** Débora Evelyn Lisboa  
-**Contact:** [smartdebby29@gmail.com](mailto:smartdebby29@gmail.com)
-
-[Download USF4 Reader 0.3.7](https://github.com/mama-eva/USF4Reader/releases/download/v0.3.7/USF4Reader-0.3.7.nvda-addon)
+[Official website](https://deb-evelyn.com.br/USF4Reader/)
+· [Download 0.3.7](https://github.com/mama-eva/USF4Reader/releases/download/v0.3.7/USF4Reader-0.3.7.nvda-addon)
 · [Release notes](https://github.com/mama-eva/USF4Reader/releases/tag/v0.3.7)
+· [Português](https://github.com/mama-eva/USF4Reader/blob/main/addon/doc/pt_BR/readme.md)
+
+## Features
+
+Reading is available in these supported areas; coverage within each area is still partial:
+
+- Main menus and supported Options screens, including Sound Settings and Voice Language.
+- Character selection, customization and Ultra Combo names.
+- Trial selection, supported tasks, completion notices and result choices.
+- Supported pause menus, confirmation questions and their selected answers.
+- Player Data menus and record rows, including character, category and displayed values.
+- Stage Select, Versus result choices, and supported startup and fight announcements.
+
+The Versus result menu identifies each player's selection. Moving one player's cursor does not
+repeat the other player's unchanged choice. Your NVDA voice and synthesizer settings stay in use.
+The tested game installation uses English labels and helper messages, including when NVDA is
+configured in Portuguese.
 
 ## Compatibility
 
-- NVDA 2026.1 on Windows.
-- The verified 32-bit `SSFIV.exe` edition of Ultra Street Fighter IV.
+Tested with **NVDA 2026.1** and the Windows edition of **Ultra Street Fighter IV** used by this project.
+Compatibility with other game editions or NVDA versions has not been confirmed.
+You need a compatible copy of the game; it is not included with the add-on.
 
-Supported executable SHA-256:
+## Installation and updates
 
-```text
-a9017416ee8104cdde64d79f1e47697c1dfecb3d58496e4950945c3e37dea537
-```
+1. Close the game and leave NVDA running.
+2. Download and open `USF4Reader-0.3.7.nvda-addon`.
+3. Confirm installation or update, then restart NVDA when prompted.
+4. Open the game and navigate with your usual keyboard or controller.
 
-Compatibility with other executable editions or later NVDA releases has not been confirmed.
-The game is not included.
+Reading starts automatically when you return to the game. There are no add-on query shortcuts
+to learn. If you update an existing installation, follow the same steps with the newer package.
+Find future versions on the [Releases page](https://github.com/mama-eva/USF4Reader/releases/latest)
+or the [official website](https://deb-evelyn.com.br/USF4Reader/).
 
-## Install or update
+### Uninstalling
 
-1. Close the game and keep NVDA running.
-2. Open `USF4Reader-0.3.7.nvda-addon` from the release assets.
-3. Confirm installation or update, then restart NVDA when requested.
-4. Open the game and navigate normally with your keyboard or controller.
+In NVDA, open **Tools → Add-on Store** and find USF4 Reader in the installed add-ons list.
+Choose **Remove**, confirm, and restart NVDA when prompted. To pause reading temporarily,
+choose **Disable**.
 
-Speech follows supported changes automatically. Your configured NVDA voice and synthesizer remain
-under your control. The verified installation uses English game labels and English helper messages,
-even when NVDA itself is set to Portuguese.
+## Known limitations
 
-## Available reading
-
-- Recognized main menus and submenus, including the selected item and supported values.
-- Character selection, customization and Ultra Combo names.
-- Trial selection, recognized tasks, completion notices and result choices.
-- Recognized pause menus and confirmation questions, including the selected answer.
-- Startup logos, the opening-movie skip notice and the title-screen Enter prompt.
-- Recognized fight announcements such as Round, Fight! and K.O.
-- Player Data navigation, the Character Records selector, and selected record rows with their
-  character, category, label and displayed values.
-- Stage Select navigation and the Versus result choices: Rematch, Select Character and Quit Versus.
-
-On the Versus result screen, each player's selection is identified. Changing one player's choice
-does not repeat the other player's unchanged choice.
-
-## What's new in 0.3.7
-
-- Added Stage Select reading.
-- Added the Versus result menu and independent selection tracking for both players.
-- Corrected round numbering so the first round is Round 1 and the second is Round 2.
-- Retained the Player Data additions and stability improvements from the preceding test builds.
-
-## Validation and known limitations
-
-The release passed **101 automated tests**. Earlier regression checks were retained; one old
-second-round expectation was corrected because it reproduced the numbering bug.
-
-Live listening checks confirmed main-menu navigation, Options, Sound Settings, Voice Language,
-Player Data lists and record values, and the Versus result menu. Stage Select and the round-number
-correction were checked against real game captures and automated replay; a listening check of those
-two changes after installing 0.3.7 is still pending.
-
-Coverage is incomplete. Areas still requiring work or further checks include:
+Some screens may remain silent, and these areas still need work:
 
 - Command List pages, move details and their submenus.
-- Intermittent Button Config reading and remaining option-screen variants.
-- Additional confirmation variants and some Versus transitions, including the matchup splash.
+- Intermittent Button Config reading and some other Options screens.
+- Some confirmation questions, the matchup splash and other Versus transitions.
 - Full coverage of online screens, Bonus Stages, stage variants and pause/result variants.
-- Combat statistics and cinematic subtitles presented as images.
+- Real-time combat statistics and cinematic subtitles displayed as images.
 
-Unknown screens may remain silent. The recipient's name in color/taunt unlock notices still awaits
-a new live listening check. These limits are not presented as completed features.
+Stage Select reading and the corrected round announcements still await a listening check after
+updating to 0.3.7. Character names in color and taunt unlock notices also need confirmation during
+play.
 
-The add-on runs inside NVDA. No separate program needs to be started, and the original game files
-are not changed.
+See the [changelog](https://github.com/mama-eva/USF4Reader/blob/main/changelog.md) for version history.
+The 0.3.7 download retains its original Portuguese user guide.
 
-## Version history
+## Reporting problems
 
-See [the changelog](https://github.com/mama-eva/USF4Reader/blob/main/changelog.md) for the release history. Version 0.3.7 is the first public GitHub
-release; earlier versions were distributed for interactive testing.
+Use [GitHub Issues](https://github.com/mama-eva/USF4Reader/issues) or email
+[smartdebby29@gmail.com](mailto:smartdebby29@gmail.com). Tell me your add-on and NVDA versions,
+the game mode, which screen you reached, what you expected to hear and the last announcement.
+A screenshot is not required.
 
-The repository and release notes are in English. The distributed 0.3.7 package retains its Portuguese
-user guide, and a Portuguese guide is retained as a translation.
+## License
 
-## Feedback
+USF4 Reader is free and open source under
+[GPL-2.0-or-later](https://github.com/mama-eva/USF4Reader/blob/main/COPYING.txt).
+Contributions, suggestions and reports of unread screens are welcome.
 
-Report a problem through [GitHub Issues](https://github.com/mama-eva/USF4Reader/issues) or email
-[smartdebby29@gmail.com](mailto:smartdebby29@gmail.com). Include the add-on version, game mode,
-screen and last spoken item. A screenshot is not required.
+## Author and contact
 
-USF4 Reader is licensed under [GPL-2.0-or-later](https://github.com/mama-eva/USF4Reader/blob/main/COPYING.txt).
+**Débora Evelyn Lisboa**
+
+[smartdebby29@gmail.com](mailto:smartdebby29@gmail.com)

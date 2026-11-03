@@ -1,115 +1,86 @@
-# USF4 Reader 0.3.7
+# USF4 Reader
 
-O USF4 Reader oferece leitura automática com NVDA para Ultra Street Fighter IV. Ele acompanha os itens,
-valores e escolhas reconhecidos enquanto você navega com os controles habituais do jogo.
+O USF4 Reader é um complemento gratuito e de código aberto para NVDA, desenvolvido para
+Ultra Street Fighter IV no Windows. Ele anuncia menus, escolhas e avisos reconhecidos enquanto
+você navega com os controles habituais do jogo, sem atalhos de consulta ou OCR.
 
-**Autora:** Débora Evelyn Lisboa  
-**Contato:** [smartdebby29@gmail.com](mailto:smartdebby29@gmail.com)
+[Página oficial](https://deb-evelyn.com.br/USF4Reader/)
+· [Baixar a versão 0.3.7](https://github.com/mama-eva/USF4Reader/releases/download/v0.3.7/USF4Reader-0.3.7.nvda-addon)
+· [Notas da versão](https://github.com/mama-eva/USF4Reader/releases/tag/v0.3.7)
+· [English](https://github.com/mama-eva/USF4Reader)
+
+## Funcionalidades
+
+A leitura está disponível nas seguintes áreas reconhecidas. A cobertura de cada uma ainda é parcial:
+
+- Menu principal e telas de Options reconhecidas, incluindo Sound Settings e Voice Language.
+- Seleção e personalização de personagens e nomes de Ultra Combo.
+- Seleção de Trials, tarefas reconhecidas, avisos de conclusão e opções de resultado.
+- Menus de pausa e perguntas reconhecidos, com a resposta selecionada.
+- Menus de Player Data e linhas de registros, com personagem, categoria e valores apresentados.
+- Stage Select, escolhas no resultado de Versus e avisos reconhecidos da abertura e da luta.
+
+No resultado de Versus, a leitura identifica a escolha de cada jogador. Quando um deles muda
+a seleção, a escolha inalterada do outro não é repetida. Sua voz e seu sintetizador do NVDA
+continuam em uso. Na instalação testada, os nomes e avisos são anunciados em inglês, mesmo
+quando o NVDA está configurado em português.
 
 ## Compatibilidade
 
-- NVDA 2026.1. A compatibilidade com versões posteriores depende das alterações do NVDA.
-- Ultra Street Fighter IV para Windows, com o executável x86 `SSFIV.exe` correspondente à edição verificada.
-
-A compatibilidade foi verificada para este executável:
-
-```text
-SHA-256: a9017416ee8104cdde64d79f1e47697c1dfecb3d58496e4950945c3e37dea537
-```
-
-Outras edições do jogo ainda não têm compatibilidade confirmada.
+Testado com **NVDA 2026.1** e com a edição Windows de **Ultra Street Fighter IV** utilizada pelo
+projeto. A compatibilidade com outras edições do jogo ou versões do NVDA ainda não foi confirmada.
+É necessário possuir uma cópia compatível do jogo; ela não está incluída no complemento.
 
 ## Instalação e atualização
 
 1. Feche o jogo e mantenha o NVDA aberto.
-2. Abra o arquivo `USF4Reader-0.3.7.nvda-addon`.
-3. Confirme a instalação ou atualização no NVDA e reinicie o NVDA quando solicitado.
-4. Abra o jogo normalmente e navegue com o teclado ou controle que você já utiliza.
+2. Baixe e abra o arquivo `USF4Reader-0.3.7.nvda-addon`.
+3. Confirme a instalação ou atualização e reinicie o NVDA quando solicitado.
+4. Abra o jogo e navegue com seu teclado ou controle habitual.
 
-A leitura acompanha automaticamente as mudanças reconhecidas. Não há atalhos de consulta do complemento
-e não é utilizado OCR. O sintetizador e a voz configurados no NVDA permanecem sob seu controle.
+A leitura começa automaticamente quando você volta ao jogo. Não há atalhos de consulta para
+aprender. Para atualizar uma instalação existente, siga os mesmos passos com o pacote mais recente.
+As próximas versões estarão na [página de Releases](https://github.com/mama-eva/USF4Reader/releases/latest)
+e na [página oficial](https://deb-evelyn.com.br/USF4Reader/).
 
-Na instalação verificada, o jogo está em inglês. Os nomes, valores e mensagens auxiliares são anunciados
-em inglês, mesmo quando a interface do NVDA está em português.
+### Desinstalação
 
-## Funcionalidades disponíveis
+No NVDA, abra **Ferramentas → Loja de complementos** e localize USF4 Reader na lista de complementos
+instalados. Escolha **Remover**, confirme e reinicie o NVDA quando solicitado. Para interromper
+o uso temporariamente, você também pode escolher **Desativar**.
 
-- Menus e submenus reconhecidos, com o item selecionado e seus valores.
-- Seleção e personalização de personagens.
-- Nomes de Ultra Combo.
-- Seleção de Trials e leitura das tarefas reconhecidas.
-- Janelas reconhecidas de pausa e resultado.
-- Perguntas reconhecidas, com acompanhamento da resposta selecionada.
-- Logos da abertura, indicação para pular o vídeo e aviso de Press Enter na tela de título.
-- Anúncios de luta reconhecidos, como Round, Fight! e K.O., e avisos reconhecidos de conclusão de Trial.
+## Limitações conhecidas
 
-## Atualização 0.3.7 em validação
+Algumas telas podem ficar em silêncio. Estas áreas ainda precisam de trabalho:
 
-Esta atualização procura melhorar a continuidade da leitura quando o jogo troca de tela. Leituras
-incompletas passageiras deixam de causar uma reconexão desnecessária. Problemas de leitura e de
-permissão passam a receber mensagens distintas. Foram acrescentadas uma prevenção para o travamento
-do NVDA ao reconhecer as janelas do jogo e uma melhoria na rapidez da leitura dos avisos da abertura.
-A documentação e a identificação da autora também foram revisadas.
+- Páginas de Command List, detalhes de golpes e seus submenus.
+- Leitura intermitente de Button Config e algumas outras telas de Options.
+- Certas perguntas de confirmação, a tela de confronto e outras transições de Versus.
+- Cobertura completa de telas online, Bonus Stages e variantes de cenário, pausa e resultado.
+- Estatísticas em tempo real durante o combate e legendas cinematográficas apresentadas como imagens.
 
-Esta versão acrescenta leitura da seleção de cenário e das escolhas do menu de resultado de Versus.
-Ao mudar uma escolha no resultado, somente o jogador cuja seleção mudou é anunciado. A numeração
-dos rounds foi corrigida: o primeiro passa a ser anunciado como Round 1 e o segundo como Round 2.
-As duas entradas de round foram capturadas durante uma partida real. A nova leitura de cenário e
-resultado foi conferida em capturas e aguarda confirmação auditiva com este pacote.
+A leitura de Stage Select e os anúncios corrigidos de round ainda aguardam confirmação por escuta
+após a atualização para 0.3.7. Os nomes de personagens nos avisos de novas cores e provocações
+também precisam de confirmação durante o uso.
 
-Foram aprovados 101 testes automáticos, mantendo as verificações das versões anteriores e corrigindo
-a expectativa antiga que reproduzia o erro na numeração do segundo round. A navegação
-pela abertura, menu principal, Options e Sound Settings foi confirmada sem novo travamento na versão
-0.3.5. A leitura da lista de Player Data, da seleção de personagens e das linhas e valores de Player
-Records e Character Records foi confirmada pelo uso na versão 0.3.6. O título de Voice Language
-também foi corrigido.
+Consulte o [histórico de versões](https://github.com/mama-eva/USF4Reader/blob/main/changelog.md).
+O download da versão 0.3.7 mantém seu guia original em português.
 
-## Correções da versão 0.3.3
+## Como relatar problemas
 
-- O valor de tempo ilimitado nos menus em inglês, incluindo Time Select, é anunciado como **Infinite**.
-  Isso evita a pronúncia em português do símbolo de infinito pelo NVDA.
-- Os avisos de nova cor ou provocação procuram anunciar o nome do personagem. Quando esse nome não
-  está disponível, a mensagem informa apenas o desbloqueio, sem pronunciar `[CHARANAME]` nem atribuí-lo
-  a outro personagem.
-- O aviso de desbloqueio de Car Crusher e as perguntas que já funcionavam foram preservados.
+Use os [Issues do GitHub](https://github.com/mama-eva/USF4Reader/issues) ou escreva para
+[smartdebby29@gmail.com](mailto:smartdebby29@gmail.com). Informe as versões do complemento e do
+NVDA, o modo de jogo, a tela em que chegou, o que esperava ouvir e o último anúncio.
+Não é necessário enviar uma captura de tela.
 
-## Validação e limitações conhecidas
+## Licença
 
-Menus, seleção de personagens, grade de Trials e pausa foram confirmados em uso nas versões anteriores.
-As confirmações de saída e o aviso de Car Crusher foram confirmados na versão 0.3.2.
-A versão 0.3.3 passou em 56 testes automáticos.
+O USF4 Reader é gratuito e de código aberto, sob a licença
+[GPL-2.0-or-later](https://github.com/mama-eva/USF4Reader/blob/main/COPYING.txt).
+Contribuições, sugestões e relatos de telas sem leitura são bem-vindos.
 
-A leitura do nome do personagem nos novos avisos de desbloqueio ainda aguarda uma nova confirmação
-auditiva durante o uso do jogo. Os testes automáticos dessa correção não substituem essa confirmação.
+## Autora e contato
 
-A cobertura é ampliada gradualmente. Ainda há telas de opções, variações de perguntas, transições do
-modo Versus, Command List, Voice Language e situações de Button Config que precisam de verificação
-ou de melhorias. As outras áreas sem cobertura completa confirmada incluem:
+**Débora Evelyn Lisboa**
 
-- Legendas cinematográficas apresentadas como imagens.
-- Estatísticas de combate.
-- Telas online.
-- Bonus Stages.
-- Seleção de cenário.
-- Algumas variantes de pausa e resultado.
-
-Telas desconhecidas permanecem em silêncio para evitar anúncios incorretos. O complemento não altera
-a disponibilidade de conteúdo nem os arquivos originais do jogo.
-
-O USF4 Reader funciona dentro do NVDA e consulta o jogo somente para leitura enquanto ele está em foco.
-Não é necessário iniciar outro programa para utilizar o complemento.
-
-## Histórico de versões
-
-- **0.3.3:** leitura de Infinite em inglês e correções nos avisos de desbloqueio de cores e provocações.
-- **0.3.2:** perguntas e respostas selecionadas, avisos da abertura e melhorias na leitura de Trials e resultados.
-- **0.3.1:** grade e instruções de Trials e ampliação da leitura de menus de pausa.
-- **0.3.0:** idioma do jogo, valores de submenus, personalização, nomes de Ultra Combo e anúncios de luta.
-
-## Contato
-
-Para relatar um problema, informe a versão do complemento, o modo de jogo, a tela em que a leitura
-parou e o que foi anunciado. Não é necessário enviar capturas de tela.
-
-Entre em contato com Débora Evelyn Lisboa pelo e-mail
-[smartdebby29@gmail.com](mailto:smartdebby29@gmail.com).
+[smartdebby29@gmail.com](mailto:smartdebby29@gmail.com)
