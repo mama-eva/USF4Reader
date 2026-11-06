@@ -5,8 +5,8 @@ Ultra Street Fighter IV no Windows. Ele anuncia menus, escolhas e avisos reconhe
 você navega com os controles habituais do jogo, sem atalhos de consulta ou OCR.
 
 [Página oficial](https://deb-evelyn.com.br/USF4Reader/)
-· [Baixar a versão 0.3.7](https://github.com/mama-eva/USF4Reader/releases/download/v0.3.7/USF4Reader-0.3.7.nvda-addon)
-· [Notas da versão](https://github.com/mama-eva/USF4Reader/releases/tag/v0.3.7)
+· [Baixar a versão 0.3.8](https://github.com/mama-eva/USF4Reader/releases/download/v0.3.8/USF4Reader-0.3.8.nvda-addon)
+· [Notas da versão](https://github.com/mama-eva/USF4Reader/releases/tag/v0.3.8)
 · [English](https://github.com/mama-eva/USF4Reader)
 
 ## Funcionalidades
@@ -28,13 +28,14 @@ quando o NVDA está configurado em português.
 ## Compatibilidade
 
 Testado com **NVDA 2026.1** e com a edição Windows de **Ultra Street Fighter IV** utilizada pelo
-projeto. A compatibilidade com outras edições do jogo ou versões do NVDA ainda não foi confirmada.
-É necessário possuir uma cópia compatível do jogo; ela não está incluída no complemento.
+projeto. O complemento detecta o jogo pelo nome do processo `SSFIV.exe` e lê versões com uma
+estrutura de dados compatível. A edição da Steam e outras versões ainda aguardam testes
+durante o jogo.
 
 ## Instalação e atualização
 
 1. Feche o jogo e mantenha o NVDA aberto.
-2. Baixe e abra o arquivo `USF4Reader-0.3.7.nvda-addon`.
+2. Baixe e abra o arquivo `USF4Reader-0.3.8.nvda-addon`.
 3. Confirme a instalação ou atualização e reinicie o NVDA quando solicitado.
 4. Abra o jogo e navegue com seu teclado ou controle habitual.
 
@@ -64,7 +65,6 @@ após a atualização para 0.3.7. Os nomes de personagens nos avisos de novas co
 também precisam de confirmação durante o uso.
 
 Consulte o [histórico de versões](https://github.com/mama-eva/USF4Reader/blob/main/changelog.md).
-O download da versão 0.3.7 mantém seu guia original em português.
 
 ## Como relatar problemas
 

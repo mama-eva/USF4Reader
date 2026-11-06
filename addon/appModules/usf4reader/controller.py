@@ -79,7 +79,6 @@ class Reader:
 
 	def _run(self):
 		memory = None
-		verified = False
 		catalog_loaded = False
 		startup_catalog_loaded = False
 		last_generation = -1
@@ -110,8 +109,7 @@ class Reader:
 				delay = 0.08
 				try:
 					if memory is None:
-						memory, base = connect(self.pid, verify=not verified)
-						verified = True
+						memory, base = connect(self.pid)
 						if not startup_catalog_loaded:
 							self.catalog = Catalog.for_game(memory.image_path(), startup=True)
 							gate = Announcements(self.catalog, debounce=0.04)

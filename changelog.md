@@ -1,5 +1,13 @@
 # USF4 Reader changelog
 
+## 0.3.8
+
+- Detects Ultra Street Fighter IV by its `SSFIV.exe` process name and allows compatible Windows builds
+  with different executable checksums or image sizes.
+- Announces when the loaded game layout is unsupported.
+
+The Steam edition and other builds still need in-game verification.
+
 ## 0.3.7
 
 - Added reading for Stage Select and the Versus result menu: Rematch, Select Character and Quit Versus.

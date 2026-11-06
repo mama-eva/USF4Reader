@@ -5,8 +5,8 @@ It reads supported menus, choices and notices as you navigate with the game's us
 so you can follow your selections without a separate query command or OCR.
 
 [Official website](https://deb-evelyn.com.br/USF4Reader/)
-· [Download 0.3.7](https://github.com/mama-eva/USF4Reader/releases/download/v0.3.7/USF4Reader-0.3.7.nvda-addon)
-· [Release notes](https://github.com/mama-eva/USF4Reader/releases/tag/v0.3.7)
+· [Download 0.3.8](https://github.com/mama-eva/USF4Reader/releases/download/v0.3.8/USF4Reader-0.3.8.nvda-addon)
+· [Release notes](https://github.com/mama-eva/USF4Reader/releases/tag/v0.3.8)
 · [Português](https://github.com/mama-eva/USF4Reader/blob/main/addon/doc/pt_BR/readme.md)
 
 ## Features
@@ -28,13 +28,14 @@ configured in Portuguese.
 ## Compatibility
 
 Tested with **NVDA 2026.1** and the Windows edition of **Ultra Street Fighter IV** used by this project.
-Compatibility with other game editions or NVDA versions has not been confirmed.
-You need a compatible copy of the game; it is not included with the add-on.
+The add-on detects the game by its `SSFIV.exe` process name and reads builds that use a
+compatible game layout. Compatibility with the Steam edition and other builds still needs
+in-game verification.
 
 ## Installation and updates
 
 1. Close the game and leave NVDA running.
-2. Download and open `USF4Reader-0.3.7.nvda-addon`.
+2. Download and open `USF4Reader-0.3.8.nvda-addon`.
 3. Confirm installation or update, then restart NVDA when prompted.
 4. Open the game and navigate with your usual keyboard or controller.
 
@@ -64,7 +65,6 @@ updating to 0.3.7. Character names in color and taunt unlock notices also need c
 play.
 
 See the [changelog](https://github.com/mama-eva/USF4Reader/blob/main/changelog.md) for version history.
-The 0.3.7 download retains its original Portuguese user guide.
 
 ## Reporting problems
 

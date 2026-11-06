@@ -10,7 +10,10 @@ from .memory_reader import MemoryReadError
 from .scaleform import ScaleformReader
 from .startup import LOGOS, title_ready
 
-# Address constants are relative to the verified executable profile.
+# Addresses are relative to the loaded game module.
+CODE_START_RVA = 0x1000
+CODE_END_RVA = 0x5282E3
+CHILD_CONTROLLER_GETTER = b"\x8b\x41\x44\xc3"  # mov eax, [ecx+0x44]; ret
 APP_CONTROLLER_RVA = 0x66BE54
 CONTROLLER_VTABLE_RVA = 0x55E22C
 ROOT_VTABLE_RVA = 0x552C24
@@ -196,9 +199,9 @@ class StateReader:
 			if not base + 0x529000 <= vtable <= base + 0x6366E3 - 40:
 				raise MemoryReadError("Vtable de evento fora da seção de dados somente leitura")
 			getter = memory.u32(vtable + 0x24)
-			if not base + 0x1000 <= getter < base + 0x5282E3:
+			if not base + CODE_START_RVA <= getter < base + CODE_END_RVA:
 				break
-			if memory.read(getter, 4) != b"\x8b\x41\x44\xc3":
+			if memory.read(getter, len(CHILD_CONTROLLER_GETTER)) != CHILD_CONTROLLER_GETTER:
 				windows = []
 				lines = []
 				trial = None

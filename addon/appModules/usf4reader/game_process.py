@@ -1,49 +1,60 @@
-"""Bind this research profile to the exact, authorized executable."""
+"""Find SSFIV.exe and check whether its loaded game layout can be read."""
 
-import hashlib
 import struct
 from pathlib import Path
 
+from .game_state import (
+	APP_CONTROLLER_RVA,
+	CHILD_CONTROLLER_GETTER,
+	CODE_END_RVA,
+	CODE_START_RVA,
+	CONTROLLER_VTABLE_RVA,
+	ROOT_VTABLE_RVA,
+)
 from .memory_reader import ProcessMemory
 
-EXE_SHA256 = "a9017416ee8104cdde64d79f1e47697c1dfecb3d58496e4950945c3e37dea537"
-IMAGE_SIZE = 0x9A0000
+INCOMPATIBLE_LAYOUT = "This version of SSFIV.exe uses an unsupported game layout."
 
 
 class UnsupportedGame(ValueError):
 	pass
 
 
-def validate_path(path):
-	if Path(path).name.casefold() != "ssfiv.exe":
-		raise UnsupportedGame("This build supports only the verified game installation.")
-
-
-def verify_executable(path):
-	validate_path(path)
-	with Path(path).open("rb") as stream:
-		digest = hashlib.file_digest(stream, "sha256").hexdigest()
-	if digest != EXE_SHA256:
-		raise UnsupportedGame("The game executable does not match the verified profile. Reading stopped.")
-
-
-def connect(pid, verify=True):
+def connect(pid):
 	memory = ProcessMemory(pid)
 	try:
-		path = memory.image_path()
-		validate_path(path)
-		if verify:
-			verify_executable(path)
+		if Path(memory.image_path()).name.casefold() != "ssfiv.exe":
+			raise UnsupportedGame("USF4 Reader requires the SSFIV.exe game process.")
 		base, size = memory.module()
-		if size != IMAGE_SIZE or memory.read(base, 2) != b"MZ":
-			raise UnsupportedGame("The process image does not match the verified profile.")
-		pe_offset = memory.u32(base + 0x3C)
-		if pe_offset > 0x1000:
-			raise UnsupportedGame("The executable header does not match the profile.")
-		signature = memory.read(base + pe_offset, 26)
-		if signature[:4] != b"PE\0\0" or struct.unpack_from("<H", signature, 4)[0] != 0x14C:
-			raise UnsupportedGame("This profile requires the verified 32-bit x86 executable.")
+		_check_image(memory, base, size)
 		return memory, base
 	except Exception:
 		memory.close()
 		raise
+
+
+def _check_image(memory, base, size):
+	if size < APP_CONTROLLER_RVA + 4 or memory.read(base, 2) != b"MZ":
+		raise UnsupportedGame(INCOMPATIBLE_LAYOUT)
+	pe_offset = memory.u32(base + 0x3C)
+	if not 0x40 <= pe_offset <= size - 26:
+		raise UnsupportedGame(INCOMPATIBLE_LAYOUT)
+	header = memory.read(base + pe_offset, 26)
+	if (
+		header[:4] != b"PE\0\0"
+		or struct.unpack_from("<H", header, 4)[0] != 0x14C
+		or struct.unpack_from("<H", header, 20)[0] < 2
+		or struct.unpack_from("<H", header, 24)[0] != 0x10B
+	):
+		raise UnsupportedGame("USF4 Reader requires a 32-bit x86 version of SSFIV.exe.")
+
+	# Check the loaded layout even during startup, when the controller can still be null.
+	# The root event's virtual getter must return the child controller field we read.
+	controller_method = memory.u32(base + CONTROLLER_VTABLE_RVA)
+	root_getter = memory.u32(base + ROOT_VTABLE_RVA + 0x24)
+	if (
+		not base + CODE_START_RVA <= controller_method < base + CODE_END_RVA
+		or not base + CODE_START_RVA <= root_getter <= base + CODE_END_RVA - len(CHILD_CONTROLLER_GETTER)
+		or memory.read(root_getter, len(CHILD_CONTROLLER_GETTER)) != CHILD_CONTROLLER_GETTER
+	):
+		raise UnsupportedGame(INCOMPATIBLE_LAYOUT)
